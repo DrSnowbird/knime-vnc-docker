@@ -1,0 +1,3 @@
+# knime-vnc-docker
+KNIME Analytics Platform in Docker with VNC for Kubernetes, Openshift, DC/OS, Container Cloud Platforms
+# Coming soon ....
