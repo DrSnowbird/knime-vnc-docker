@@ -1,0 +1,17 @@
+version: '3' 
+services:
+  knime-docker:
+    image: openkbs/knime-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: knime-docker
+    environment:
+      - USER_ID=${USER_ID:-1000}
+      - GROUP_ID=${GROUP_ID:-1000}
+    env_file:
+      - ./docker.env
+    volumes:
+      - ./workspace:/home/developer/workspace
+      - ./.eclipse:/home/developer/.eclipse
+
