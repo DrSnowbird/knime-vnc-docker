@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 MY_DIR=$(dirname "$(readlink -f "$0")")
 
@@ -250,7 +250,8 @@ RESTART_OPTION=no
 #VNC_RESOLUTION="1280x1024"
 VNC_RESOLUTION="1920x1280"
 
-docker run -d \
+set -x
+docker run -it \
     --name=${instanceName} \
     --restart=${RESTART_OPTION} \
     ${privilegedString} \

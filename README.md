@@ -95,6 +95,13 @@ it will work the same way as your local installed Java's "javac" and "java" comm
 * [openkbs/sublime-docker](https://hub.docker.com/r/openkbs/sublime-docker/)
 * [openkbs/webstorm-docker](https://hub.docker.com/r/openkbs/webstorm-docker/)
 
+# Eclipse issues
+* You might see WARNING message in the log from Eclipse for class not found. It has not impact in VNC or the KNIME tools. However, it might needs to be fixed by KNIME product team. We will not address here it for now.
+```
+WARNING: Aries Blueprint packages not available. So namespaces will not be registered
+java.lang.NoClassDefFoundError: org/apache/aries/blueprint/NamespaceHandler
+```
+
 # Versions
 ```
 JAVA_HOME=/usr/jdk1.8.0_191
