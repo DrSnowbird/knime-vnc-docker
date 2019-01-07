@@ -1,7 +1,7 @@
-# KNIME Analytics Platform Docker with VNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
+# KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
-KNIME (latest/3.7.0 + Java 8 (1.8.0_191) JDK + Maven 3.5 + Python 3.5 + X11
+KNIME (latest/3.7.0 + Java 8 (1.8.0_191) JDK + Maven 3.5 + Python 3.5 + VNC/noVNC
 
 # Components:
 * [KNIME Analtyics Platform](https://www.knime.com/download-knime-analytics-platform-sdk): latest (v 3.7.0) for Machine Learning & Big Data Analytics
@@ -11,6 +11,7 @@ KNIME (latest/3.7.0 + Java 8 (1.8.0_191) JDK + Maven 3.5 + Python 3.5 + X11
 * Apache Maven 3.5.3
 * Python 3.5.2
 * Gradle 4.9
+* VNC / noVNC: for VNC Client/Viwer / Browser-based VNC (noVNC)
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 
 # Run (recommended for easy-start)
@@ -18,6 +19,21 @@ Image is pulling from openkbs/netbeans
 ```
 ./run.sh
 ```
+
+# Run - Override VNC environment variables 
+The following VNC environment variables can be overwritten at the docker run phase to customize your desktop environment inside the container. You can change those variables using configurations CLI or Web-GUI with OpenShift, Kubernetes, DC/OS, etc.
+```
+VNC_COL_DEPTH, default: e.g., 16
+    -e VNC_COL_DEPTH=16
+VNC_RESOLUTION, default: e.g., 1280x1024
+    -e VNC_RESOLUTION=1280x1024
+VNC_PW, default: my-pw: e.g. MySpecial!(Password%)
+    -e VNC_PW=MySpecial!(Password%)
+```
+# Connect to VNC Viewer/Client or noVNC (Browser-based VNC)
+* connect via VNC viewer localhost:5901, default password: vncpassword
+* connect via noVNC HTML5 full client: http://localhost:6901/vnc.html, default password: vncpassword
+* connect via noVNC HTML5 lite client: http://localhost:6901/?password=vncpassword
 
 # Build
 You can build your own image locally.
@@ -46,7 +62,7 @@ or,
 alias dpy='docker run --rm openkbs/knime-vnc-docker python'
 dpy -c 'print("Hello World")'
 ```
-# (Optional Use) Compile or Run java while no local installation needed
+# (Other userful standalone Docker Use) Compile or Run java while no local installation needed
 Remember, the default working directory, /data, inside the docker container -- treat is as "/".
 So, if you create subdirectory, "./data/workspace", in the host machine and
 the docker container will have it as "/data/workspace".
@@ -75,12 +91,21 @@ Hello, World
 Hence, the alias above, "djavac" and "djava" is your docker-based "javac" and "java" commands and
 it will work the same way as your local installed Java's "javac" and "java" commands.
 
-# Reference
+# References
 * [KNIME](https://www.knime.com)
 * [KNIME Analytics Platform](https://www.knime.com/download-knime-analytics-platform-sdk)
 * [KNIME FAQ](https://www.knime.com/faq#q6)
 
-# See also docker-based IDE
+# VNC/noVNC Resources
+* [VNC Viewer / Client](https://www.realvnc.com/en/connect/download/viewer/)
+* [TightVNC](https://www.tightvnc.com/download.php)
+
+# See also VNC/noVNC docker-based IDE or Analytics Platform
+* [consol/ubuntu-xfce-vnc](https://hub.docker.com/r/consol/ubuntu-xfce-vnc/)
+* [openkbs/eclipse-photon-vnc-docker](https://hub.docker.com/r/openkbs/eclipse-photon-vnc-docker/)
+* [openkbs/knime-vnc-docker](https://hub.docker.com/r/openkbs/knime-vnc-docker/)
+
+# See also docker-based IDEs
 * [openkbs/rapidminer-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/rapidminer-docker)
 * [DrSnowbird/distributedWekaSpark](https://github.com/DrSnowbird/distributedWekaSpark)
 * [openkbs/docker-atom-editor](https://hub.docker.com/r/openkbs/docker-atom-editor/)
