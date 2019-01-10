@@ -247,9 +247,6 @@ cleanup
 #### run restart options: { no, on-failure, unless-stopped, always }
 RESTART_OPTION=no
 
-#VNC_RESOLUTION="1280x1024"
-VNC_RESOLUTION="1920x1280"
-
 set -x
 docker run -it \
     --name=${instanceName} \
