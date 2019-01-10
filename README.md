@@ -19,15 +19,22 @@ Image is pulling from openkbs/netbeans
 ```
 ./run.sh
 ```
-
+Once it is up, the default password is "vncpassword" to access with your web browser:
+```
+http://<ip_address>:6901/vnc.html,
+e.g.
+=> Standalone Docker: http://localhost:6901/vnc.html
+=> Openshift Container Platform: http://<route-from-openshift>/vnc.html
+=> similarly for Kubernetes Container Platform: (similar to the Openshift above!)
+```
 # Run - Override VNC environment variables 
 The following VNC environment variables can be overwritten at the docker run phase to customize your desktop environment inside the container. You can change those variables using configurations CLI or Web-GUI with OpenShift, Kubernetes, DC/OS, etc.
 ```
-VNC_COL_DEPTH, default: e.g., 16
+VNC_COL_DEPTH, default is 16,
     -e VNC_COL_DEPTH=16
 VNC_RESOLUTION, default: e.g., 1280x1024
     -e VNC_RESOLUTION=1280x1024
-VNC_PW, default: my-pw: e.g. MySpecial!(Password%)
+VNC_PW, default: vncpassword: e.g. MySpecial!(Password%)
     -e VNC_PW=MySpecial!(Password%)
 ```
 # Connect to VNC Viewer/Client or noVNC (Browser-based VNC)
