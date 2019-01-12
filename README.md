@@ -42,6 +42,21 @@ VNC_RESOLUTION, default: 1920x1080 , e.g., change to 1280x1024
 VNC_PW, default: vncpassword , e.g., change to MySpecial!(Password%)
     -e VNC_PW=MySpecial!(Password%)
 ```
+
+# Screen (Desktop) Resolution
+Two ways to change Screen resolutions.
+
+## 1.) Modify ./run.sh file
+```
+#VNC_RESOLUTION="1280x1024"
+VNC_RESOLUTION="1920x1280"
+```
+
+## 2.) Customize Openshift or Kubernetes container run envionrment
+```
+Set up, say, VNC_RESOLUTION with value 1920x1280
+```
+
 # Build
 You can build your own image locally.
 ```
