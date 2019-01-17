@@ -1,16 +1,17 @@
 # KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
-KNIME (latest/3.7.0 + Java 8 (1.8.0_191) JDK + Maven 3.5 + Python 3.5 + VNC/noVNC
+KNIME (latest/3.7.0 + Java 8 (1.8.0_201) JDK + Maven 3.6 + Python 3.5 + PIP3 18.1 + + npm 3.5.2 + nodejs v4.2.6 + Gradle 5.1
 
 # Components:
 * [KNIME Analtyics Platform](https://www.knime.com/download-knime-analytics-platform-sdk): latest (v 3.7.0) for Machine Learning & Big Data Analytics
-* java version "1.8.0_191"
-  Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
-  Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
-* Apache Maven 3.5.3
+* java version "1.8.0_201"
+  Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
+  Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
+* Apache Maven 3.6.0
 * Python 3.5.2
-* Gradle 4.9
+* npm 3.5.2 + nodejs v4.2.6
+* Gradle 5.1
 * VNC / noVNC: for VNC Client/Viwer / Browser-based VNC (noVNC)
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 
@@ -149,47 +150,50 @@ WARNING: Aries Blueprint packages not available. So namespaces will not be regis
 java.lang.NoClassDefFoundError: org/apache/aries/blueprint/NamespaceHandler
 ```
 
-# Versions
+# Releases information
 ```
-JAVA_HOME=/usr/jdk1.8.0_191
-java version "1.8.0_191"
-Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
-Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
-Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T18:33:14Z)
-Maven home: /usr/apache-maven-3.5.4
-Java version: 1.8.0_191, vendor: Oracle Corporation, runtime: /usr/jdk1.8.0_191/jre
+root@c3fd448b277c:/usr# ./printVersions.sh 
++ echo JAVA_HOME=/usr/java
+JAVA_HOME=/usr/java
++ java -version
+java version "1.8.0_201"
+Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
+Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
++ mvn --version
+Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T18:41:47Z)
+Maven home: /usr/apache-maven-3.6.0
+Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: /usr/jdk1.8.0_201/jre
 Default locale: en_US, platform encoding: ANSI_X3.4-1968
-OS name: "linux", version: "4.15.0-42-generic", arch: "amd64", family: "unix"
+OS name: "linux", version: "4.15.0-43-generic", arch: "amd64", family: "unix"
++ python -V
 Python 2.7.12
++ python3 -V
 Python 3.5.2
++ pip --version
 pip 18.1 from /usr/local/lib/python3.5/dist-packages/pip (python 3.5)
++ pip3 --version
 pip 18.1 from /usr/local/lib/python3.5/dist-packages/pip (python 3.5)
-
-Welcome to Gradle 4.9!
-
-Here are the highlights of this release:
- - Experimental APIs for creating and configuring tasks lazily
- - Pass arguments to JavaExec via CLI
- - Auxiliary publication dependency support for multi-project builds
- - Improved dependency insight report
-
-For more details see https://docs.gradle.org/4.9/release-notes.html
-
++ gradle --version
 
 ------------------------------------------------------------
-Gradle 4.9
+Gradle 5.1.1
 ------------------------------------------------------------
 
-Build time:   2018-07-16 08:14:03 UTC
-Revision:     efcf8c1cf533b03c70f394f270f46a174c738efc
+Build time:   2019-01-10 23:05:02 UTC
+Revision:     3c9abb645fb83932c44e8610642393ad62116807
 
-Kotlin DSL:   0.18.4
-Kotlin:       1.2.41
-Groovy:       2.4.12
-Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
-JVM:          1.8.0_191 (Oracle Corporation 25.191-b12)
-OS:           Linux 4.15.0-42-generic amd64
+Kotlin DSL:   1.1.1
+Kotlin:       1.3.11
+Groovy:       2.5.4
+Ant:          Apache Ant(TM) version 1.9.13 compiled on July 10 2018
+JVM:          1.8.0_201 (Oracle Corporation 25.201-b09)
+OS:           Linux 4.15.0-43-generic amd64
 
++ npm --version
+3.5.2
++ nodejs --version
+v4.2.6
++ cat /etc/lsb-release /etc/os-release
 DISTRIB_ID=Ubuntu
 DISTRIB_RELEASE=16.04
 DISTRIB_CODENAME=xenial
