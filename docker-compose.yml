@@ -1,16 +1,19 @@
 version: '3' 
 services:
-  knime-docker:
-    image: openkbs/knime-docker
+  knime-vnc-docker:
+    image: openkbs/knime-vnc-docker
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: knime-docker
+    container_name: knime-vnc-docker
     environment:
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}
-    env_file:
-      - ./docker.env
+    #env_file:
+    #  - ./.env
+    ports:
+      - 5901:5901
+      - 6901:5601
     volumes:
       - ./workspace:/home/developer/workspace
       - ./.eclipse:/home/developer/.eclipse
