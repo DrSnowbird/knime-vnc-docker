@@ -16,7 +16,7 @@ KNIME (latest/3.7.0 + Java 8 (1.8.0_201) JDK + Maven 3.6 + Python 3.5 + PIP3 18.
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 
 # Run (recommended for easy-start)
-Image is pulling from openkbs/netbeans
+Image is pulling from openkbs/knime-vnc-docker
 ```
 ./run.sh
 ```
