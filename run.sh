@@ -9,14 +9,25 @@ if [ $# -lt 1 ]; then
     echo "  ${0} ls -al "
 fi
 
+##########################################################################
+#### ---- RUN Configuration (CHANGE THESE if needed!!!!)          --- ####
+##########################################################################
+
+## -- Change to one (1) if run.sh needs to support VNC/NoVNC-based the Container -- ##
+VNC_BUILD=1
+
+## -- Change to one (1) if run.sh needs to support host's user to run the Container -- ##
+USER_VARS_NEEDED=0
+
 ###########################################################################
 ## -- docker-compose or docker-stack use only --
 ###########################################################################
+
 ## -- (this script will include ./.env only if "./docker-run.env" not found
 DOCKER_ENV_FILE="./docker-run.env"
 
 ###########################################################################
-#### (Optional - if you want add Environmental Variable for Running Docker)
+#### (Optional - to filter Environmental Variables for Running Docker)
 ###########################################################################
 ENV_VARIABLE_PATTERN=""
 
@@ -368,23 +379,26 @@ cleanup
 #### run restart options: { no, on-failure, unless-stopped, always }
 RESTART_OPTION=no
 
-
-###########################
-#### -- Docker Run --- ####
-###########################
-set -x
+#################################
+## -- USER_VARS into Docker -- ##
+#################################
+if [ ${USER_VARS_NEEDED} -gt 0 ]; then
+    USER_VARS="--user $(id -u $USER)"
+fi
 
 #################################
 ## -- VNC-based Docker build --##
 #################################
-VNC_BUILD=1
+# DETECT_VNC_DOCKER=`cat Dockerfile |grep -E "FROM.*vnc.*"`
+# if [ ! "${DETECT_VNC_DOCKER}" = "" ]; then
+#      VNC_BUILD=1
+# fi
 
 if [ $VNC_BUILD -gt 0 ]; then
-    #### ---- for VNC-based ---- ####
-    #############################################
+    #### ----------------------------------- ####
     #### -- VNC_RESOLUTION setup default --- ####
-    #############################################
-    if [ `echo $ENV_VAR|grep VNC_RESOLUTION` ]; then
+    #### ----------------------------------- ####
+    if [ `echo $ENV_VAR|grep VNC_VNC_RESOLUTION` ]; then
         #VNC_RESOLUTION=1280x1024
         VNC_RESOLUTION=1920x1080
         ENV_VARS="${ENV_VARS} -e VNC_RESOLUTION=${VNC_RESOLUTION}" 
