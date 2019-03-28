@@ -16,5 +16,5 @@ services:
       - 6901:5601
     volumes:
       - ./workspace:/home/developer/workspace
-      - ./.eclipse:/home/developer/.eclipse
+      - ./data:/home/developer/data
 
