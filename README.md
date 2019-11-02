@@ -1,13 +1,11 @@
 # KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
-KNIME (latest/4.0.2) + Java 8 (1.8.0_212) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 + + npm 6 + node 11 + Gradle 5
+KNIME (latest/4.0.2) + Java 8 (1.8.0_222) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 + + npm 6 + node 11 + Gradle 5
 
 # Components:
 * [KNIME Analtyics Platform](https://www.knime.com/download-knime-analytics-platform-sdk): latest (v 4.0.0) for Machine Learning & Big Data Analytics
-* openjdk version "1.8.0_212"
-  OpenJDK Runtime Environment (build 1.8.0_212-8u212-b01-1~deb9u1-b01)
-  OpenJDK 64-Bit Server VM (build 25.212-b01, mixed mode)
+* openjdk version "1.8.0_222"
 * Apache Maven 3.6.0
 * Python 3.6 / Python 2.7 + pip 19.1 + Python3 virtual environments (venv, virtualenv, virtualenvwrapper, mkvirtualenv, ..., etc.)
 * Node v11.15.0 + npm 6.7.0 (from NodeSource official Node Distribution)
@@ -17,7 +15,7 @@ KNIME (latest/4.0.2) + Java 8 (1.8.0_212) OpenJDK + Maven 3.6 + Python 3.6 + PIP
 * Ubuntu 18.04 Guest OS
 
 # Run (recommended for easy-start)
-Image is pulling from openkbs/knime-vnc-docker a
+(Image is pulledfrom openkbs/knime-vnc-docker)
 ```
 ./run.sh
 ```
@@ -25,8 +23,8 @@ Image is pulling from openkbs/knime-vnc-docker a
 ## Mobile devices and Desktop PC supported / tested:
 * SmartPhones: tested ok! iPhone5 Safari works though phone screen size being too small vs the desired HD 1920x1080. It should work across all the smartphones with HTML5-capable brwosers. Hence, to access with small phone screen, run with VNC_RESOLUTION=800x600 (or adjust it to fit your phone's screen size).
 * Tablets: tested ok! Amazon Fire with noVNC works!. It should work across all the tablets with HTML5-capable brwosers.
-![KNIME Analytics with Amazon Fire tablet](doc/knime-vnc-docker-on-Amazon-Fire-tablet.jpeg)
-* Desktop PC or MacBook: tested ok! It should work across all PCs Desktop with HTML5-capable brwosers. ![KNIME Analytics on Desktop PC Browser](doc/knime-vnc-docker-on-Desktop-PC-Browser.png)
+See [KNIME Analytics with Amazon Fire tablet](https://github.com/DrSnowbird/knime-vnc-docker/blob/master/doc/knime-vnc-docker-on-Amazon-Fire-tablet.jpeg)
+* Desktop PC or MacBook: tested ok! It should work across all PCs Desktop with HTML5-capable brwosers. See [KNIME Analytics on Desktop PC Browser](https://github.com/DrSnowbird/knime-vnc-docker/blob/master/doc/knime-vnc-docker-on-Desktop-PC-Browser.png)
 
 ## Connect to VNC Viewer/Client or noVNC (Browser-based VNC)
 * connect via VNC viewer localhost:5901, default password: vncpassword
@@ -53,7 +51,7 @@ VNC_PW, default: vncpassword , e.g., change to MySpecial!(Password%)
 ```
 
 # Screen (Desktop) Resolution
-Two ways to change Screen resolutions.
+Two ways to change Screen resolutions as below:
 
 ## 1.) Modify ./run.sh file
 ```
@@ -86,7 +84,8 @@ You can build your own image locally.
 * [openkbs/eclipse-photon-vnc-docker](https://hub.docker.com/r/openkbs/eclipse-photon-vnc-docker/)
 * [openkbs/knime-vnc-docker](https://hub.docker.com/r/openkbs/knime-vnc-docker/)
 
-# See also docker-based IDEs
+# See also docker-based IDEs or similar/related tools
+* [KNIME X11 Docker](https://hub.docker.com/r/openkbs/knime-docker/)
 * [openkbs/rapidminer-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/rapidminer-docker)
 * [DrSnowbird/distributedWekaSpark](https://github.com/DrSnowbird/distributedWekaSpark)
 * [openkbs/docker-atom-editor](https://hub.docker.com/r/openkbs/docker-atom-editor/)
@@ -178,3 +177,4 @@ PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-poli
 VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
+
