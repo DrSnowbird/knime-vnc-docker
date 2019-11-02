@@ -1,7 +1,7 @@
 # KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
-KNIME (latest/4.0.0) + Java 8 (1.8.0_212) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 + + npm 6 + node 11 + Gradle 5
+KNIME (latest/4.0.2) + Java 8 (1.8.0_212) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 + + npm 6 + node 11 + Gradle 5
 
 # Components:
 * [KNIME Analtyics Platform](https://www.knime.com/download-knime-analytics-platform-sdk): latest (v 4.0.0) for Machine Learning & Big Data Analytics
