@@ -1,7 +1,7 @@
 # KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
-KNIME (latest/4.1) + Java 8 (1.8.0) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 + + npm 6 + node 13 + Gradle 5
+KNIME (latest/4.1) + Java 8 (1.8.0) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 20 + + npm 6 + node 13 + Gradle 5
 
 # Just a suggestion: If you need Python Jupyter IDE besides KNIME, you may want to check out:
 * [Python Jupyter (by openkbs/tensorflow-python3-jupyter)](https://hub.docker.com/repository/docker/openkbs/tensorflow-python3-jupyter)
@@ -20,7 +20,7 @@ KNIME (latest/4.1) + Java 8 (1.8.0) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 +
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy, ..., etc.
 
 # Run (recommended for easy-start)
-(Image is pulledfrom openkbs/knime-vnc-docker)
+(Image is pulled from openkbs/knime-vnc-docker)
 ```
 ./run.sh
 ```
@@ -59,13 +59,13 @@ VNC_PW, default: vncpassword , e.g., change to MySpecial!(Password%)
 # Screen (Desktop) Resolution
 Two ways to change Screen resolutions as below:
 
-## 1.) Modify ./run.sh file
+### 1.) Modify ./run.sh file
 ```
 #VNC_RESOLUTION="1280x1024"
 VNC_RESOLUTION="1920x1280"
 ```
 
-## 2.) Customize Openshift or Kubernetes container run envionrment
+### 2.) Customize Openshift or Kubernetes container run envionrment
 ```
 Set up, say, VNC_RESOLUTION with value 1920x1280
 ```
@@ -110,7 +110,7 @@ You can build your own image locally.
 * [openkbs/webstorm-vnc-docker](https://hub.docker.com/r/openkbs/webstorm-vnc-docker/)
 
 # Eclipse issues
-* You might see WARNING message in the log from Eclipse for class not found. It has not impact in VNC or the KNIME tools. However, it might needs to be fixed by KNIME product team. We will not address here it for now.
+* You might see WARNING message in the log from Eclipse for class not found. It has no impact in VNC or the KNIME tools. However, it might needs to be fixed by KNIME product team. We will not address here it for now.
 ```
 WARNING: Aries Blueprint packages not available. So namespaces will not be registered
 java.lang.NoClassDefFoundError: org/apache/aries/blueprint/NamespaceHandler
