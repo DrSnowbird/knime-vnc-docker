@@ -1,14 +1,12 @@
 # KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
-KNIME (latest/4.1) + Java 8 (1.8.0) OpenJDK + Maven 3.6 + Python 3.6 + PIP3 20 + + npm 6 + node 13 + Gradle 5
-
-# Just a suggestion: If you need Python Jupyter IDE besides KNIME, you may want to check out:
+# Just a suggestion: If you need Python Jupyter (loaded with Tensorflow) Docker besides KNIME, you may want to check out:
 * [Python Jupyter (by openkbs/tensorflow-python3-jupyter)](https://hub.docker.com/repository/docker/openkbs/tensorflow-python3-jupyter)
 
 # Components:
-* VNC/NoVNC-based Docker [KNIME Platform](https://www.knime.com/) for Use with HTML 5 Browsers from anywhere
-* [KNIME Platform](https://www.knime.com/download-knime-analytics-platform-sdk) latest (v 4.1) for Machine Learning & Big Data Analytics
+* VNC/NoVNC-based Docker [KNIME Platform](https://www.knime.com/) for Use with HTML 5 Browsers from anywhere.
+* [KNIME Platform](https://www.knime.com/download-knime-analytics-platform-sdk) latest (v 4.1.2) for Machine Learning & Big Data Analytics
 * Ubuntu 18.04 LTS now and we will use Ubuntu 20.04 on or about 2020-04-15 as LTS Docker base image.
 * openjdk version "1.8.0_242"
   OpenJDK Runtime Environment (build 1.8.0_242-8u242-b08-0ubuntu3~18.04-b08)
