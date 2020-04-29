@@ -52,7 +52,11 @@ RUN \
 #########################################
 #### ---- Addition Libs/Plugins ---- ####
 #########################################
+#.. causing hub.docker.io build failure lately - not able to resolve it. 
+#.. Workaround: disable it.
 #RUN sudo apt-get update -y && sudo apt-get install -y libwebkitgtk-3.0-dev
+# ref: https://www.knime.com/faq#q6
+RUN sudo apt-get update -y && sudo apt-get install -y libwebkitgtk-1.0-0
 
 ##################################
 #### VNC ####
