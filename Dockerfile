@@ -18,7 +18,7 @@ ENV WORKSPACE=${WORKSPACE:-"${HOME}/workspace"}
 
 ENV DATA=${DATA:-"${HOME}/data"}
 
-ARG PRODUCT_VERSION=${PRODUCT_VERSION:-4.1.2}
+ARG PRODUCT_VERSION=${PRODUCT_VERSION:-4.1.3}
 ENV PRODUCT_VERSION=${PRODUCT_VERSION}
 
 ARG PRODUCT_DIR=${PRODUCT_DIR:-knime_${PRODUCT_VERSION}}
@@ -52,8 +52,8 @@ RUN \
 #########################################
 #### ---- Addition Libs/Plugins ---- ####
 #########################################
-#.. libwebkitgtk-3.0-0 causing hub.docker.io build failure. Workaround: disable it.
-#RUN sudo apt-get update -y && sudo apt-get install -y libgtk-3-0 libwebkitgtk-3.0-0
+RUN sudo apt-get update -y && \
+    sudo apt-get install -y libwebkitgtk-3.0-0
 
 ##################################
 #### VNC ####
