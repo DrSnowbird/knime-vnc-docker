@@ -52,8 +52,9 @@ RUN \
 #########################################
 #### ---- Addition Libs/Plugins ---- ####
 #########################################
-RUN sudo apt-get update -y && \
-    sudo apt-get install -y libwebkitgtk-3.0-0
+## -- hub.docker build having issue; temporarily remove these two lines --
+#RUN sudo apt-get update -y && \
+#    sudo apt-get install -y libwebkitgtk-3.0-0
 
 ##################################
 #### VNC ####
