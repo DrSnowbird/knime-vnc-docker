@@ -1,16 +1,16 @@
 version: '3.1' 
 
 services:
-  knime-vnc-docker:
-    container_name: knime-vnc-docker
-    image: openkbs/knime-vnc-docker
+  {{CONTAINER_NAME}}:
+    container_name: {{CONTAINER_NAME}}
+    image: {{ORG_NAME}}/{{CONTAINER_NAME}}
     build:
       context: .
       dockerfile: Dockerfile
     env_file:
       - ./.env
     environment:
-      - CONTAINER_NAME=knime-vnc-docker
+      - CONTAINER_NAME={{CONTAINER_NAME}}
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}
       # - APP_HOME=${APP_HOME:-/home/developer/app}
