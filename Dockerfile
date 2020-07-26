@@ -18,7 +18,7 @@ ENV WORKSPACE=${WORKSPACE:-"${HOME}/workspace"}
 
 ENV DATA=${DATA:-"${HOME}/data"}
 
-ARG PRODUCT_VERSION=${PRODUCT_VERSION:-4.1.3}
+ARG PRODUCT_VERSION=${PRODUCT_VERSION:-4.2.0}
 ENV PRODUCT_VERSION=${PRODUCT_VERSION}
 
 ARG PRODUCT_DIR=${PRODUCT_DIR:-knime_${PRODUCT_VERSION}}
@@ -31,7 +31,7 @@ ENV PRODUCT_EXE=${PRODUCT_EXE:-${INSTALL_BASE}/${PRODUCT_DIR}/${PRODUCT}}
 
 ARG PRODUCT_URL=${PRODUCT_URL:-https://download.knime.org}
 
-# ENV DOWNLOAD_URL=https://download.knime.org/analytics-platform/linux/knime_4.1.1.linux.gtk.x86_64.tar.gz
+# ENV DOWNLOAD_URL=https://download.knime.org/analytics-platform/linux/knime_4.2.0.linux.gtk.x86_64.tar.gz
 #ARG DOWNLOAD_URL=https://download.knime.org/analytics-platform/linux/${PRODUCT}_${PRODUCT_VERSION}.linux.gtk.x86_64.tar.gz
 ARG DOWNLOAD_URL=${PRODUCT_URL}/analytics-platform/linux/${PRODUCT}_${PRODUCT_VERSION}.linux.gtk.x86_64.tar.gz
 
@@ -45,8 +45,7 @@ RUN sudo wget -q -c ${DOWNLOAD_URL} && \
     sudo tar xvf $(basename ${DOWNLOAD_URL}) && \
     sudo rm -f $(basename ${DOWNLOAD_URL} )
     
-RUN \
-    sudo mkdir -p ${DATA} ${WORKSPACE} ${PRODUCT_WORKSPACE} && \
+RUN sudo mkdir -p ${DATA} ${WORKSPACE} ${PRODUCT_WORKSPACE} && \
     sudo chown -R ${USER}:${USER} ${DATA} ${WORKSPACE} ${PRODUCT_WORKSPACE}
     
 #########################################
