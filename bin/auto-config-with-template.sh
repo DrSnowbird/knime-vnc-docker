@@ -77,7 +77,7 @@ function processFlags() {
     while [ $moreFlag -gt 0 ] ; do
       case $1 in
         "-l")
-          DOCKER_HOST_IP="127.0.01"
+          DOCKER_HOST_IP="127.0.0.1"
           DOCKER_HOST_NAME="localhost"
           TEMPLATE_FILE=".env.template"
           countShift=$((countShift+1))
