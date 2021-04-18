@@ -1,13 +1,17 @@
-# KNIME (latest/4.3) + Java 8 OpenJDK + Maven 3.6 + Python 3.6 + PIP3 19 + + npm 6 + node 13 + Gradle 6 + noVNC
+# KNIME (latest/4.3.2) + Java 8 OpenJDK + Maven 3.6 + Python 3.6 + PIP3 20 + + npm 7 + node 15 + Gradle 6 + noVNC
 KNIME Analytics Platform with VNC/noVNC for Container Cluster Platforms (Openshift, Kubernetes, etc.)
 [![](https://images.microbadger.com/badges/image/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/knime-vnc-docker.svg)](https://microbadger.com/images/openkbs/knime-vnc-docker "Get your own version badge on microbadger.com")
 
 # Just a suggestion: If you need Python Jupyter (loaded with Tensorflow) Docker besides KNIME, you may want to check out:
 * [Python Jupyter (by openkbs/tensorflow-python3-jupyter)](https://hub.docker.com/repository/docker/openkbs/tensorflow-python3-jupyter)
 
+## Join, Share, and Support the KNIME Community: 
+* [KNIME Blogs](https://www.knime.com/blog)
+* [Join the Community at KNIME web site](https://www.knime.com/knime-community)
+
 # Components:
 * VNC/NoVNC-based Docker [KNIME Platform](https://www.knime.com/) for Use with HTML 5 Browsers from anywhere.
-* [KNIME Platform](https://www.knime.com/download-knime-analytics-platform-sdk) latest (v 4.3.0) for Machine Learning & Big Data Analytics
+* [KNIME Platform](https://www.knime.com/download-knime-analytics-platform-sdk) latest (v 4.3.2) for Machine Learning & Big Data Analytics
 * Ubuntu 18.04 LTS now.
 * [Java openkbs/jdk-mvn-py3 - see README.md](https://github.com/DrSnowbird/jdk-mvn-py3/blob/master/README.md)
 * [Base Container Image: openkbs/jdk-mvn-py3](https://github.com/DrSnowbird/jdk-mvn-py3)
