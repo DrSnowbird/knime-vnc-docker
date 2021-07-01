@@ -18,7 +18,7 @@ ENV WORKSPACE=${WORKSPACE:-"${HOME}/workspace"}
 
 ENV DATA=${DATA:-"${HOME}/data"}
 
-ARG PRODUCT_VERSION=${PRODUCT_VERSION:-4.3.3}
+ARG PRODUCT_VERSION=${PRODUCT_VERSION:-4.4.0}
 ENV PRODUCT_VERSION=${PRODUCT_VERSION}
 
 ARG PRODUCT_DIR=${PRODUCT_DIR:-knime_${PRODUCT_VERSION}}
@@ -45,8 +45,10 @@ RUN sudo wget -q -c ${DOWNLOAD_URL} && \
     sudo tar xvf $(basename ${DOWNLOAD_URL}) && \
     sudo rm -f $(basename ${DOWNLOAD_URL} )
     
+COPY ./Desktop/KNIME.desktop ${HOME}/Desktop/KNIME.desktop
+
 RUN sudo mkdir -p ${DATA} ${WORKSPACE} ${PRODUCT_WORKSPACE} && \
-    sudo chown -R ${USER}:${USER} ${DATA} ${WORKSPACE} ${PRODUCT_WORKSPACE}
+    sudo chown -R ${USER}:${USER} ${DATA} ${WORKSPACE} ${PRODUCT_WORKSPACE} ${HOME}/Desktop
     
 #########################################
 #### ---- Addition Libs/Plugins ---- ####

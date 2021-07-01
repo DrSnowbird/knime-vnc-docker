@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=KNIME
+Comment=Access the Internet
+Exec=/opt/knime_4.4.0/knime %U 
+Icon=/opt/knime_4.4.0/icon.xpm
+Path=/home/developer/workspace
+Terminal=false
+StartupNotify=false
